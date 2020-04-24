@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <SigPlot id="plot1">
+            <ArrayLayer v-bind:plotData="[1, 2, 3, 4]" />
+        </SigPlot>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import SigPlot from "./components/SigPlot";
+  import ArrayLayer from "./components/ArrayLayer";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    components: {
+      SigPlot,
+      ArrayLayer
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #2c3e50;
+    }
+
+    #plot1 {
+        height: 500px;
+        width: 500px;
+    }
 </style>
