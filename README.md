@@ -1,5 +1,13 @@
 # vue-sigplot
 
+![Example image](./example.png)
+
+## Installation
+
+```
+npm install vue-sigplot
+```
+
 ## Project setup
 ```
 yarn install
