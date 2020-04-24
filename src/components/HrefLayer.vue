@@ -10,7 +10,7 @@ export default {
     },
     layerOptions: {
       type: Object,
-    }
+    },
   },
   render() {
     console.log("RENDER");
@@ -21,6 +21,6 @@ export default {
 
     plot.overlay_href(this.href, this.onload, this.layerOptions);
     return null;
-  }
+  },
 };
 </script>

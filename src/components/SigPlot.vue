@@ -13,20 +13,20 @@ export default {
       type: Object,
       default() {
         return {};
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       // By creating the provider in the data property, it becomes reactive,
       // so child components will update when `plot` changes.
-      plotInitialized: false
+      plotInitialized: false,
     };
   },
   mounted() {
     this.plot = new Plot(this.$el, this.plotOptions);
     this.plotInitialized = true;
-  }
+  },
 };
 </script>
 

@@ -6,14 +6,14 @@ export default {
       type: Array,
       default() {
         return [];
-      }
+      },
     },
     options: {
       type: Object,
     },
     layerOptions: {
       type: Object,
-    }
+    },
   },
   render() {
     console.log("RENDER");
@@ -24,6 +24,6 @@ export default {
 
     plot.overlay_array(this.plotData, this.options, this.layerOptions);
     return null;
-  }
+  },
 };
 </script>
