@@ -2,14 +2,11 @@
 export default {
   name: "ArrayLayer",
   props: {
-    plotData: {
-      type: Array,
-      default() {
-        return [];
-      }
+    href: {
+      type: String,
     },
-    options: {
-      type: Object,
+    onload: {
+      type: Function,
     },
     layerOptions: {
       type: Object,
@@ -22,7 +19,7 @@ export default {
       return;
     }
 
-    plot.overlay_array(this.plotData, this.options, this.layerOptions);
+    plot.overlay_href(this.href, this.onload, this.layerOptions);
     return null;
   }
 };
