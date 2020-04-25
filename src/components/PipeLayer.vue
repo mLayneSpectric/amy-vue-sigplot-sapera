@@ -2,11 +2,8 @@
 export default {
   name: "ArrayLayer",
   props: {
-    plotData: {
+    pipeData: {
       type: Array,
-      default() {
-        return [];
-      },
     },
     options: {
       type: Object,
@@ -16,9 +13,9 @@ export default {
     },
   },
   watch: {
-    plotData(newData, oldData) {
+    pipeData(newData, oldData) {
       if (newData !== oldData) {
-        this.$parent.plot.reload(this.layer, newData, this.options);
+        this.$parent.plot.push(this.layer, newData, this.options);
       }
     },
     options(newOptions, oldOptions) {
@@ -38,11 +35,18 @@ export default {
       return;
     }
 
-    this.layer = plot.overlay_array(
-      this.plotData,
+    // start by setting the header of the pipe
+    this.layer = this.$parent.plot.overlay_pipe(
       this.options,
       this.layerOptions
     );
+
+    // if data is provided and non-empty, go ahead and
+    // begin plotting data
+    if (this.pipeData !== undefined && this.pipeData.length > 0) {
+      this.$parent.plot.push(this.layer, this.pipeData);
+    }
+    return null;
   },
   render() {
     return null;
