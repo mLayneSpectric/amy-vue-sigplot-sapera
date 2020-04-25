@@ -6932,15 +6932,16 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
-sigplot@^2.0.0-rc15:
-  version "2.0.0-rc16"
-  resolved "https://registry.yarnpkg.com/sigplot/-/sigplot-2.0.0-rc16.tgz#d388b740a52e998a0550ce53f88043aa88f13383"
-  integrity sha512-fdxS61/bXYDvt5KWz3e2ETrlL583UrU+5Z5yroc1mGLZawb78Z0bvdt+Qre/J0ixRs+MpEzIbdiMq3qFbyoinw==
+sigplot@^2.0.0-rc17:
+  version "2.0.0-rc17"
+  resolved "https://registry.yarnpkg.com/sigplot/-/sigplot-2.0.0-rc17.tgz#cc0da8105ec8fd483817e906c0f8a15321b8396f"
+  integrity sha512-giJHW2ISp87eDUw9r3HMJf9bcsR24d8eKnjjacZyIPQ1IUxfx7tdzKb+OcRhn7jyXKTLZcW8pEARuyQVYKjB8Q==
   dependencies:
     loglevel "^1.4.1"
     spin "0.0.1"
     tinycolor2 "^1.4.1"
     travis "^0.1.1"
+    underscore "^1.9.2"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
@@ -7671,6 +7672,11 @@ uglify-js@3.4.x:
   dependencies:
     commander "~2.19.0"
     source-map "~0.6.1"
+
+underscore@^1.9.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.10.2.tgz#73d6aa3668f3188e4adb0f1943bd12cfd7efaaaf"
+  integrity sha512-N4P+Q/BuyuEKFJ43B9gYuOj4TQUHXX+j2FqguVOpjkssLUUrnJofCcBccJSCoeturDoZU6GorDTHSvUDlSQbTg==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
