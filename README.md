@@ -1,5 +1,7 @@
 # vue-sigplot
 
+![Build vue-sigplot library](https://github.com/LGSInnovations/vue-sigplot/workflows/Build%20vue-sigplot%20library/badge.svg)
+
 ![Example image](example.png)
 
 ## Installation
