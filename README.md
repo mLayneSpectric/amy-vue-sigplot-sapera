@@ -1,6 +1,6 @@
 # vue-sigplot
 
-![Example image](./example.png)
+![Example image](example.png)
 
 ## Installation
 

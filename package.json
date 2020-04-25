@@ -1,8 +1,22 @@
 {
   "name": "vue-sigplot",
   "version": "0.1.0",
+  "description": "Vue wrapper for SigPlot",
   "main": "dist/vue-sigplot.common.js",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/lgsinnovations/vue-sigplot",
+  "author": {
+    "name": "LGS Innovations",
+    "email": "sigplot@lgsinnovations.com",
+    "url": "https://www.lgsinnovations.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgsinnovations/vue-sigplot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lgsinnovations/vue-sigplot/issues"
+  },
   "files": [
     "dist/*",
     "src/*",
