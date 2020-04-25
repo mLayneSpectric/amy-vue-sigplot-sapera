@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "sigplot": "^2.0.0-rc16",
+    "sigplot": "^2.0.0-rc17",
     "vue": "^2.6.11"
   },
   "devDependencies": {
