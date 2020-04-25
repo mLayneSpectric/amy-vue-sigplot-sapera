@@ -1,6 +1,6 @@
 {
   "name": "vue-sigplot",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vue wrapper for SigPlot",
   "main": "dist/vue-sigplot.common.js",
   "license": "Apache-2.0",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "sigplot": "^2.0.0-rc15",
+    "sigplot": "^2.0.0-rc16",
     "vue": "^2.6.11"
   },
   "devDependencies": {

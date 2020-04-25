@@ -6933,9 +6933,9 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
 sigplot@^2.0.0-rc15:
-  version "2.0.0-rc15"
-  resolved "https://registry.yarnpkg.com/sigplot/-/sigplot-2.0.0-rc15.tgz#35d784e5ce83e0a8620315570e5f119360c57d96"
-  integrity sha512-xSdzlTUzVhTmxeO9A/V59sQ+iApo9BorStPThPFiAp+1nJ08BojTV8SvVWZTarT3Mysc5Js1+MtQqwRZIq29iQ==
+  version "2.0.0-rc16"
+  resolved "https://registry.yarnpkg.com/sigplot/-/sigplot-2.0.0-rc16.tgz#d388b740a52e998a0550ce53f88043aa88f13383"
+  integrity sha512-fdxS61/bXYDvt5KWz3e2ETrlL583UrU+5Z5yroc1mGLZawb78Z0bvdt+Qre/J0ixRs+MpEzIbdiMq3qFbyoinw==
   dependencies:
     loglevel "^1.4.1"
     spin "0.0.1"
