@@ -36,7 +36,7 @@
                     height: this.height,
                     width: this.width,
                 };
-            },
+            }
         },
         data() {
             return {
@@ -60,17 +60,30 @@
                 if (newWidth !== oldWidth) {
                     this.plot.checkresize();
                 }
+            },
+            listeners(newListeners, oldListeners) {
+                if (newListeners !== oldListeners) {
+                    // Remove all old listeners
+                    for (const [what, callback] of Object.entries(oldListeners)) {
+                        this.plot.removeListener(what, callback);
+                        console.log('Removed ', what, callback);
+                    }
+
+                    // Add the new listeners
+                    for (const [what, callback] of Object.entries(newListeners)) {
+                        this.plot.addListener(what, callback);
+                        console.log('Added ', what, callback);
+                    }
+                }
             }
         },
         mounted() {
             this.plot = new Plot(this.$el, this.plotOptions);
             this.plotInitialized = true;
 
-            if (Object.keys(this.listeners).length != 0) {
-                for (const [what, callback] of Object.entries(this.listeners)) {
-                    console.log(what, callback);
-                    this.plot.addListener(what, callback);
-                }
+            for (const [what, callback] of Object.entries(this.listeners)) {
+                console.log(what, callback);
+                this.plot.addListener(what, callback);
             }
         },
     };
