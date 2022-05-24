@@ -80,6 +80,7 @@
         mounted() {
             this.plot = new Plot(this.$el, this.plotOptions);
             this.plotInitialized = true;
+            this.plot.change_settings(this.plotOptions); // lg_colorbar can't be enabled when the plot is instantiated, so call change_settings after plot is initialized
 
             for (const [what, callback] of Object.entries(this.listeners)) {
                 console.log(what, callback);
