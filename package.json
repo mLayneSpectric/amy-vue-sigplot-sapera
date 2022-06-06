@@ -35,8 +35,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "sigplot": "^2.0.0-rc17",
-    "vue": "^2.6.11"
+    "sigplot": "^2.0.0-rc19",
+    "vue": "^2.6.11",
+    "yarn": "^1.22.18"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
