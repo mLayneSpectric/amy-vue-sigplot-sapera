@@ -1,6 +1,6 @@
 <script>
     export default {
-        name: "ArrayLayer",
+        name: "HrefLayer",
         props: {
             href: {
                 type: String,

@@ -1,9 +1,9 @@
 <script>
 export default {
-  name: "PipeLayer",
+  name: "WPipeLayer",
   props: {
-    pipeData: {
-      type: Array,
+    websocket: {
+      type: String,
     },
     options: {
       type: Object,
@@ -13,9 +13,9 @@ export default {
     },
   },
   watch: {
-    pipeData(newData, oldData) {
-      if (newData !== oldData) {
-        this.$parent.plot.push(this.layer, newData, this.options);
+    websocket(newWebsocket, oldWebsocket) {
+      if (newWebsocket !== oldWebsocket) {
+        this.$parent.plot.push(this.layer, newWebsocket, this.options);
       }
     },
     options(newOptions, oldOptions) {
@@ -36,7 +36,8 @@ export default {
     }
 
     // start by setting the header of the pipe
-    this.layer = this.$parent.plot.overlay_pipe(
+    this.layer = this.$parent.plot.overlay_wpipe(
+      this.websocket,
       this.options,
       this.layerOptions
     );

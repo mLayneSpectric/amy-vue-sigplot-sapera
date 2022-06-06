@@ -9,6 +9,9 @@
     <SigPlot id="plot3">
       <PipeLayer :pipe-data="random" :options="{type: 2000, subsize: 1000}"/>
     </SigPlot>
+    <SigPlot id="plot4">
+      <WPipeLayer :websocket="ws" :layer-options="{layerType: '1D'}"/>
+    </SigPlot>
     <button id="toggler" @click="btnToggle = !btnToggle">Toggle Data</button>
   </div>
 </template>
@@ -18,6 +21,7 @@ import SigPlot from "./components/SigPlot";
 import ArrayLayer from "./components/ArrayLayer";
 import HrefLayer from "./components/HrefLayer";
 import PipeLayer from "./components/PipeLayer";
+import WPipeLayer from "./components/WPipeLayer";
 
 export default {
   name: "App",
@@ -25,7 +29,8 @@ export default {
     SigPlot,
     ArrayLayer,
     HrefLayer,
-    PipeLayer
+    PipeLayer,
+    WPipeLayer
   },
   computed: {
     hrefData() {
@@ -40,6 +45,7 @@ export default {
       random: [],
       random2D: [],
       generateDataInterval: 0,
+      ws: "ws://localhost:9877"
     }
   },
   beforeDestroy() {
@@ -79,7 +85,8 @@ export default {
 
 #plot1,
 #plot2,
-#plot3 {
+#plot3,
+#plot4 {
   display: inline-block;
   height: 400px;
   width: 400px;
