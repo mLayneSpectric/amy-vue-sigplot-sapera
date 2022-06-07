@@ -25,7 +25,7 @@ export default {
     },
     layerOptions(newLayerOptions, oldLayerOptions) {
       if (newLayerOptions !== oldLayerOptions) {
-        this.plot.get_layer(this.layer).change_settings(newLayerOptions);
+        this.$parent.plot.change_settings(newLayerOptions);
       }
     },
   },

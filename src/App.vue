@@ -9,10 +9,11 @@
     <SigPlot id="plot3">
       <PipeLayer :pipe-data="random" :options="{type: 2000, subsize: 1000}"/>
     </SigPlot>
-    <SigPlot id="plot4">
+    <SigPlot id="plot4" :plot-options="{ cmode: 'L2', autol: 5 }">
       <WPipeLayer :websocket="ws" :layer-options="{layerType: '1D'}"/>
     </SigPlot>
     <button id="toggler" @click="btnToggle = !btnToggle">Toggle Data</button>
+    <button id="toggler" @click="sendMessage('Hello World')">Send Message</button>
   </div>
 </template>
 
@@ -22,6 +23,8 @@ import ArrayLayer from "./components/ArrayLayer";
 import HrefLayer from "./components/HrefLayer";
 import PipeLayer from "./components/PipeLayer";
 import WPipeLayer from "./components/WPipeLayer";
+
+var _connection;
 
 export default {
   name: "App",
@@ -45,7 +48,8 @@ export default {
       random: [],
       random2D: [],
       generateDataInterval: 0,
-      ws: "ws://localhost:9877"
+      ws: "ws://127.0.0.1:9877",
+      connection: null
     }
   },
   beforeDestroy() {
@@ -53,6 +57,9 @@ export default {
   },
   mounted() {
     this.generateData()
+  },
+  created() {
+    // this.createWebsocket();
   },
   methods: {
     generateData() {
@@ -70,6 +77,24 @@ export default {
         this.random = random;
         this.random2D = random2D;
       }, 16);
+    },
+    createWebsocket() {
+      console.log("Starting connection to WebSocket Server");
+      const ws_url = "ws://127.0.0.1:9876/ws/status";
+      _connection = new WebSocket(ws_url);
+
+      _connection.onmessage = function(event) {
+        console.log(event);
+      }
+
+      _connection.onopen = function(event) {
+        console.log(event);
+        console.log("Successfully connected to the echo websocket server...");
+      }
+    },
+    sendMessage: function(message){
+      console.log(_connection);
+      _connection.send(message);
     }
   }
 };
