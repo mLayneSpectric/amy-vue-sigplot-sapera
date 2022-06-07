@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "sigplot": "^2.0.0-rc19",
+    "sigplot": "github:spectricamy/amy-sigplot",
     "vue": "^2.6.11",
     "yarn": "^1.22.18"
   },
