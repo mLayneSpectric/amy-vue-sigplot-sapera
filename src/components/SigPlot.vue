@@ -61,7 +61,6 @@
                     this.plot.checkresize();
                 }
             },
-            // AMY temporarily adding in this comment to verify npm install correct vue-sigplot version
             listeners(newListeners, oldListeners) {
                 if (newListeners !== oldListeners) {
                     // Remove all old listeners
