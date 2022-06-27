@@ -15,18 +15,25 @@ export default {
   watch: {
     websocket(newWebsocket, oldWebsocket) {
       if (newWebsocket !== oldWebsocket) {
-        // console.log('The websocket url has changed!')
+        console.log('The websocket url has changed!');
         if (newWebsocket === null){
           this.$parent.plot.deoverlay();
+          this.layer = null;
         }
         else {
-          this.$parent.plot.overlay_wpipe(newWebsocket, this.options, this.layerOptions);
+          console.log('This layer (ws):  '+ this.layer);
+          this.layer = this.$parent.plot.overlay_wpipe(newWebsocket, this.options, this.layerOptions);
         }
       }
     },
     options(newOptions, oldOptions) {
       if (newOptions !== oldOptions) {
-        this.$parent.plot.headermod(this.layer, newOptions);
+        console.log('Options have changed!');
+        console.log('This layer (options):  ' + this.layer);
+        if (this.layer !== null) {
+          this.$parent.plot.headermod(this.layer.layer_n, newOptions);
+
+        }
       }
     },
     layerOptions(newLayerOptions, oldLayerOptions) {
@@ -42,15 +49,16 @@ export default {
     }
     // start by setting the header of the pipe
     if (this.websocket !== null){
-      // console.log('Creating WPIPE plot')
-      // console.log(this.websocket)
       this.layer = this.$parent.plot.overlay_wpipe(
             this.websocket,
             this.options,
             this.layerOptions
           );
     }
-    
+    else{
+      this.layer = null;
+    }
+
   },
   render() {
     return null;
