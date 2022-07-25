@@ -16,8 +16,11 @@
             href(newHref, oldHref) {
                 if (newHref !== oldHref) {
                     // this.$parent.plot.deoverlay(this.layer);
-                    this.$parent.plot.deoverlay(); // want to clear all layers, not just a single layer
-                    this.$parent.plot.overlay_href(newHref, this.onload, this.layerOptions);
+                    console.log('Href changed to ' + newHref);
+                    if (newHref !== null){
+                        this.$parent.plot.deoverlay(); // want to clear all layers, not just a single layer
+                        this.$parent.plot.overlay_href(newHref, this.onload, this.layerOptions);
+                    }
                 }
             },
             layerOptions(newLayerOptions, oldLayerOptions) {
@@ -32,8 +35,9 @@
             if (!plot) {
                 return;
             }
-
-            this.layer = plot.overlay_href(this.href, this.onload, this.layerOptions);
+            if (this.href !== null){
+                this.layer = plot.overlay_href(this.href, this.onload, this.layerOptions);
+            }
         },
         render() {
             return null;
