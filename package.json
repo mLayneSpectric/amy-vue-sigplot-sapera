@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "sigfile": "github:spectriclabs/sigfile",
     "sigplot": "github:spectriclabs/spectric-sigplot-amy",
     "vue": "^2.6.11",
     "yarn": "^1.22.18"
