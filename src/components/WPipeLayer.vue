@@ -16,8 +16,8 @@ export default {
     websocket(newWebsocket, oldWebsocket) {
       if (newWebsocket !== oldWebsocket) {
         console.log('The websocket url has changed!');
+        this.$parent.plot.deoverlay();
         if (newWebsocket === null){
-          this.$parent.plot.deoverlay();
           this.layer = null;
         }
         else {

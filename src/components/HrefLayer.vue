@@ -17,8 +17,9 @@
                 if (newHref !== oldHref) {
                     // this.$parent.plot.deoverlay(this.layer);
                     console.log('Href changed to ' + newHref);
+                    this.$parent.plot.deoverlay(); // want to clear all layers, not just a single layer
+
                     if (newHref !== null){
-                        this.$parent.plot.deoverlay(); // want to clear all layers, not just a single layer
                         this.$parent.plot.overlay_href(newHref, this.onload, this.layerOptions);
                     }
                 }
